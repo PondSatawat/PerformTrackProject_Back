@@ -24,7 +24,7 @@ public class Assignment {
     private String taskTitle;
     private String taskDescription;
     private LocalDate dueDate;
-
+    private String subject;
     // Status Score
     private String submissionStatus; // เช่น "NOT_SUBMITTED", "SUBMITTED", "LATE"
     private Double score;
