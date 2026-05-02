@@ -1,4 +1,4 @@
-package com.example.backendperform;
+package com.example.backendperform.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -21,4 +21,5 @@ public class User {
     private String lastName;
     private String role;
     private String academicYear;
+    private String major;
 }
