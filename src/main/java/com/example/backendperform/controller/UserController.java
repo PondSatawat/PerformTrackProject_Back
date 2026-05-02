@@ -1,5 +1,7 @@
-package com.example.backendperform;
+package com.example.backendperform.controller;
 
+import com.example.backendperform.model.User;
+import com.example.backendperform.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +24,7 @@ public class UserController {
             existingUser.setFirstName(user.getFirstName());
             existingUser.setLastName(user.getLastName());
             existingUser.setAcademicYear(user.getAcademicYear()); // เซฟชั้นปี
+            existingUser.setMajor(user.getMajor()); // เซฟสาขาวิชา
             
             if (user.getRole() != null) {
                 existingUser.setRole(user.getRole());
@@ -35,5 +38,10 @@ public class UserController {
     @GetMapping("/uid/{uid}")
     public User getUserByUid(@PathVariable String uid) {
         return userRepository.findByFirebaseUid(uid);
+    }
+
+    @GetMapping
+    public java.util.List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }
