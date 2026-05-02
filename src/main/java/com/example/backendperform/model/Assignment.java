@@ -33,6 +33,7 @@ public class Assignment {
     private Boolean lateSubmission;
     private LocalDateTime submittedAt;
     private Double score;
+    private Double maxScore; // คะแนนเต็มของงาน
 
     @Column(columnDefinition = "TEXT")
     private String studentNote;
